@@ -31,7 +31,7 @@ nmap -p- --open --min-rate 5000 -sS -vvv -Pn -n IP
 -Pn | Dejamos de usar el protocolo de resolución de direcciones ARP para el escaneo. (Agiliza el escaneo)
 -n | Dejamos de usar el servicio DNS para resolver la dirección. (Agiliza el escaneo)
 
-[Imagen]
+![Pasted image 20240729231158](https://github.com/user-attachments/assets/42e781ce-c0ce-4abf-9919-7e843dfa56ab)
 
 > Haremos un escaneo de puertos con scripts de reconocimiento y versión para obtener más información acerca de los servicios que están corriendo en la máquina:
 
@@ -55,7 +55,7 @@ nmap -p22,80,111,139,443,1024 -sCV -Pn -n -vvv IP
 nbtscan IP
 ```
 
-[Imagen]
+![Pasted image 20240729231616](https://github.com/user-attachments/assets/68d25bc1-b1aa-45a0-a100-6dcb4562c634)
 
 > Ahora trataremos de loggearnos en el rpc mediante una NULL session la cual resulta ser válida en esta máquina.
 
@@ -71,7 +71,7 @@ rpcclient -U "" IP
 | ------------ | -------------------------------------------------- |
 | -U           | Elegir el nombre de usuario que emplearemos para loggearnos. Si está vacío se tratará de una NULL session. |
 
-[Imagen]
+![Pasted image 20240729231908](https://github.com/user-attachments/assets/51842771-ee33-452b-bcd0-7fa27aff9c02)
 
 > También podemos hacer uso de la herramienta enum4linux para obtener una mayor información acerca de la máquina víctima:
 
@@ -87,7 +87,7 @@ enum4linux IP
 searchsploit "Samba 2.2.1a"
 ```
 
-[Imagen]
+![Pasted image 20240729232519](https://github.com/user-attachments/assets/a30e297b-d430-42f8-998c-b70b1f08ecdc)
 
 > Ahora trataremos de emplear el siguiente exploit que permite realizar una RCE (Remote Code Execution), por lo que tendremos que obtenerlo mediante el siguiente comando:
 
@@ -101,7 +101,7 @@ searchsploit -m multiple/remote/10.c
 | ------------ | -------------------------------------------------- |
 | -m           | Elegir la ruta del exploit que quieres descargar de exploitDB.  |
 
-[Imagen]
+![Pasted image 20240729232715](https://github.com/user-attachments/assets/c564aa3a-69cb-45a9-8af1-126314e12fcd)
 
 > Ahora procederemos a compilarlo y darle permisos de ejecución:
 
@@ -122,7 +122,7 @@ chmod +x exploit
 | +x           | Permite brindar al binario de permisos de ejecución.  |
 
 
-[Imagen]
+![Pasted image 20240729232858](https://github.com/user-attachments/assets/7d58d1af-00c8-4a14-8527-499e910f959f)
 
 > Ahora emplearemos el binario siguiendo el uso recomendado por el creador con los parámetros que veamos convenientes y ganaremos acceso como root en la máquina víctima:
 
@@ -136,6 +136,7 @@ chmod +x exploit
 -p | Permite elegir el puerto sobre el que se usará el exploit.
 -b | Permite seleccionar que distribución de SO (Sistema Operativo) está empleando la máquina víctima.
 
-[Imagenes 2]
+![Pasted image 20240729233227](https://github.com/user-attachments/assets/f79bdcfa-5988-42ae-8984-848dc6fad9f6)
+![Pasted image 20240729233401](https://github.com/user-attachments/assets/28f58066-3c2c-4991-af63-f63564a4202e)
 
 > Una vez hecho esto, ya estaría comprometida la máquina. Al haber obtenido directamente una shell como el usuario root no necesitariamos realizar una escalada de privilegios.
