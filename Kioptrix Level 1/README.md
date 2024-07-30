@@ -13,7 +13,7 @@ arp-scan -I eth0 --localnet --ignoredups
 | --localnet   | Realizar el barrido en la red local.               |
 | --ignoredups | Ignorar posibles duplicados a la hora del barrido. |
 
-[imagen]
+![Pasted image 20240729231008](https://github.com/user-attachments/assets/12c86fdd-ab14-4c4a-b28e-8bfd40a3185e)
 
 >Posteriormente realizaremos un escaneo de puertos para obtener los puertos abiertos de la máquina víctima:
 
