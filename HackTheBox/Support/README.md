@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b344a861-ea4f-4281-b3bf-5091b4714f54)# Enumeration
+# Enumeration
 
 >Realizamos un escaneo de puertos TCP con mi herramienta automatizada de escaneo:
 
