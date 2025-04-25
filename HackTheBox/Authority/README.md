@@ -474,7 +474,7 @@ Certipy v4.8.2 - by Oliver Lyak (ly4k)
         }
 ```
 
-> Aprovecharemos esta vulnerabilidad para escalar privilegios pidiendo un certificado pfx del usuario administrador para así poder impersonarlo al obtener su hash NTLM y ganar acceso a este.
+> Aprovecharemos esta vulnerabilidad para escalar privilegios pidiendo un certificado pfx del usuario administrador para así poder impersonarlo y ganar acceso a este.
 
 > Para ello, debemos obtener acceso a una cuenta de alguno de los grupos listados anteriormente, por suerte, nuestro usuario tiene los privilegios SeMachineAccountPrivilege 
 
